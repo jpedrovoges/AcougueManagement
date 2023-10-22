@@ -2,16 +2,23 @@ class TelaEstoque:
 
     def tela_opcoes(self):
         print('---- Estoque ----')
+<<<<<<< HEAD
         print('1 - Incluir corte no estoque')
         print('2 - Alterar corte no estoque')
         print('3 - Excluir corte do estoque')
         print('4 - Listar estoque')
+=======
+        print('1 - Listar estoque')
+        print('2 - Incluir peça do estoque')
+        print('3 - Excluir peça do estoque')
+>>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
         print('0 - Retornar')
         print('\n')
 
         opcao = int(input('Escolha uma opção: '))
         return opcao
 
+<<<<<<< HEAD
     def pega_dados(self):
         print('-------- DADOS CARNE ----------')
         cod = input('Codigo: ')
@@ -30,6 +37,11 @@ class TelaEstoque:
     def seleciona(self):
         cod = input('Digite o cod do corte que deseja alterar: ')
         return cod
+=======
+    def lista_carnes(self, corte):
+        print('Corte: ', corte)
+
+>>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
 
     def mostra_mensagem(self, msg):
         print(msg)

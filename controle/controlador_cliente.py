@@ -39,9 +39,13 @@ class ControladorCliente:
             else:
                 raise ClienteJaExisteException
         except ClienteJaExisteException as e:
+<<<<<<< HEAD
             self.__tela_cliente.mostra_mensagem('\n')
             self.__tela_cliente.mostra_mensagem(e)
             self.__tela_cliente.mostra_mensagem('\n')
+=======
+            self.__tela_cliente.mostra_mensagem(e)
+>>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
 
     def alterar(self):
         self.lista_clientes()

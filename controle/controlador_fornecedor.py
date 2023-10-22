@@ -24,10 +24,15 @@ class ControladorFornecedor:
             else:
                 raise ListaVaziaException
         except ListaVaziaException as e:
+<<<<<<< HEAD
             self.__tela_fornecedor.mostra_mensagem('\n')
             self.__tela_fornecedor.mostra_mensagem(e)
             self.__tela_fornecedor.mostra_mensagem('\n')
 
+=======
+            self.__tela_fornecedor.mostra_mensagem(e)
+            self.__tela_fornecedor.mostra_mensagem('\n')
+>>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
     def cadastrar(self):
         dados = self.__tela_fornecedor.pega_dados()
         fornec = self.pega_fornecedor_cpf(dados['cpf'])
@@ -67,7 +72,10 @@ class ControladorFornecedor:
 
         else:
             self.__tela_fornecedor.mostra_mensagem('Fornecedor não cadastrado')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
     def retornar(self):
         self.__controlador_sistema.abre_tela()
 
