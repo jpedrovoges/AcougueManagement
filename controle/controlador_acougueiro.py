@@ -24,10 +24,7 @@ class ControladorAcougueiro:
             else:
                 raise ListaVaziaException
         except ListaVaziaException as e:
-<<<<<<< HEAD
             self.__tela_acougueiro.mostra_mensagem('\n')
-=======
->>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
             self.__tela_acougueiro.mostra_mensagem(e)
             self.__tela_acougueiro.mostra_mensagem('\n')
 

@@ -1,10 +1,6 @@
 from entidade.boi import Boi
 from limite.tela_boi import TelaBoi
-<<<<<<< HEAD
 from exceptions.ListaVaziaException import BoiException
-=======
-from exceptions.ListaVaziaException import ListaVaziaException
->>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
 from exceptions.JaExisteException import BoiJaExisteException
 
 
@@ -27,14 +23,9 @@ class ControladorBoi:
                 for boi in self.__bois:
                     self.__tela_boi.lista_bois({"num": boi.num_boi, "parte": boi.parte, "peso": boi.peso})
             else:
-<<<<<<< HEAD
                 raise BoiException
         except BoiException as e:
             self.__tela_boi.mostra_mensagem('\n')
-=======
-                raise ListaVaziaException
-        except ListaVaziaException as e:
->>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff
             self.__tela_boi.mostra_mensagem(e)
             self.__tela_boi.mostra_mensagem('\n')
 
