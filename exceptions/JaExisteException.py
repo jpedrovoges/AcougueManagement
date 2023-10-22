@@ -16,12 +16,8 @@ class ClienteJaExisteException(Exception):
 
 class BoiJaExisteException(Exception):
     def __init__(self):
-<<<<<<< HEAD
         super().__init__('Boi já cadastrado')
 
 class CorteJaExisteException(Exception):
     def __init__(self):
         super().__init__('Corte ja inserido no estoque')
-=======
-        super().__init__('Boi já cadastrado')
->>>>>>> 34a0697814cdba1a57426971b0668da456ff8dff

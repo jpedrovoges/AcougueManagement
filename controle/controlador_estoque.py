@@ -71,16 +71,6 @@ class ControladorEstoque:
         else:
             self.__tela_estoque.mostra_mensagem('Codigo não corresponde a nenhum corte')
 
-    def lista_carnes(self):
-        try:
-            if self.__corte == None:
-                raise ListaVaziaException
-            else:
-                for corte in self.__corte:
-                    self.__tela_estoque.lista_carnes(corte)
-        except ListaVaziaException as e:
-            self.__tela_estoque.mostra_mensagem(e)
-            self.__tela_estoque.mostra_mensagem('\n')
 
     def retornar(self):
         self.__controlador_sistema.abre_tela()

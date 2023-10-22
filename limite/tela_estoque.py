@@ -31,8 +31,12 @@ class TelaEstoque:
         cod = input('Digite o cod do corte que deseja alterar: ')
         return cod
 
-    def lista_carnes(self, corte):
-        print('Corte: ', corte)
+    def lista_carnes(self, dados):
+        print('Cod: ', dados["cod"])
+        print('Corte: ', dados["corte"])
+        print('Preço: ', dados["preco"])
+        print('Qtd: ', dados["qtd"])
+        print('\n')
 
     def mostra_mensagem(self, msg):
         print(msg)
