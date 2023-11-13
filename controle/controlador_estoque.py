@@ -2,7 +2,6 @@ from entidade.estoque import Estoque
 from limite.tela_estoque import TelaEstoque
 from exceptions.ListaVaziaException import EstoqueVazioException
 from exceptions.JaExisteException import CorteJaExisteException
-from exceptions.ListaVaziaException import ListaVaziaException
 
 
 class ControladorEstoque:
@@ -83,3 +82,7 @@ class ControladorEstoque:
         continua = True
         while continua:
             lista_opcoes[self.__tela_estoque.tela_opcoes()]()
+
+
+
+

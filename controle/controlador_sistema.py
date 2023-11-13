@@ -10,14 +10,22 @@ from limite.tela_sistema import TelaSistema
 
 class ControladorSistema:
     def __init__(self):
-        self.__controlador_entrega = ControladorEntrega(self)
-        self.__controlador_estoque = ControladorEstoque(self)
         self.__controlador_cliente = ControladorCliente(self)
+        self.__controlador_estoque = ControladorEstoque(self)
         self.__controlador_fornecedor = ControladorFornecedor(self)
         self.__controlador_acougueiro = ControladorAcougueiro(self)
         self.__controlador_motorista = ControladorMotorista(self)
         self.__controlador_boi = ControladorBoi(self)
+        self.__controlador_entrega = ControladorEntrega(self)
         self.__tela_sistema = TelaSistema()
+
+    @property
+    def controlador_cliente(self):
+        return self.__controlador_cliente
+
+    @property
+    def controlador_estoque(self):
+        return self.__controlador_estoque
 
     def inicializa_sistema(self):
         self.abre_tela()
@@ -63,3 +71,4 @@ class ControladorSistema:
             opcao_escolhida = self.__tela_sistema.tela_opcoes()
             funcao_escolhida = lista_opcoes[opcao_escolhida]
             funcao_escolhida()
+

@@ -21,3 +21,7 @@ class BoiJaExisteException(Exception):
 class CorteJaExisteException(Exception):
     def __init__(self):
         super().__init__('Corte ja inserido no estoque')
+
+class EntregaJaExisteException(Exception):
+    def __init__(self):
+        super().__init__('A entrega já foi criada')
