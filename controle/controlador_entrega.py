@@ -1,7 +1,5 @@
 from limite.tela_entrega import TelaEntrega
 from entidade.entrega import Entrega
-from controle.controlador_cliente import ControladorCliente
-from controle.controlador_estoque import ControladorEstoque
 from exceptions.JaExisteException import EntregaJaExisteException
 
 
@@ -16,15 +14,16 @@ class ControladorEntrega:
             if entrega.cod == cod:
                 return entrega
         return None
+
     def cria_entrega(self):
-        dados = self.__tela_entrega.pega_dados()
-        entreg = self.entrega_por_cod(dados['cod'])
+        dados_entrega = self.__tela_entrega.pega_dados()
+        entreg = self.entrega_por_cod(dados_entrega["codigo"])
         try:
-            if entreg is None:
-                entrega = Entrega(dados['cliente'], dados['cod'])
+            cliente = self.__controlador_sistema.controlador_cliente.pega_cliente_cpf(dados_entrega["cpf"])
+            if entreg is None and cliente is not None:
+                carnes = self.__tela_entrega.adc_carne()
+                entrega = Entrega(cliente, dados_entrega["codigo"], carnes)
                 self.__entregas.append(entrega)
-
-
                 self.__tela_entrega.mostra_mensagem("Sua entrega foi incluida!")
             else:
                 raise EntregaJaExisteException

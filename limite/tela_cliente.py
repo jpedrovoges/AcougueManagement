@@ -20,7 +20,7 @@ class TelaCliente:
 
     def lista_cliente(self, dados):
         print('Nome: ', dados['nome'])
-        print('CNPJ: ', dados['cpf'])
+        print('CPF: ', dados['cpf'])
         print('\n')
 
     def seleciona_cliente(self):

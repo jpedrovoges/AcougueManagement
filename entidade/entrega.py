@@ -4,8 +4,9 @@ from entidade.estoque import Estoque
 
 
 class Entrega:
-    def __init__(self, cpf_cliente: Cliente.cpf, cod: int):
-        self.__cpf_cliente = cpf_cliente
+    def __init__(self, cliente: Cliente, cod: int):
+        if isinstance(cliente, Cliente):
+            self.__cliente = cliente
         self.__cod = cod
         self.__carnes = []
 
@@ -15,7 +16,7 @@ class Entrega:
 
     @property
     def cliente(self):
-        return self.__cpf_cliente
+        return self.__cliente
 
     @property
     def cod(self):

@@ -70,6 +70,13 @@ class ControladorEstoque:
         else:
             self.__tela_estoque.mostra_mensagem('Codigo não corresponde a nenhum corte')
 
+    def alterar_qtd(self, cod: int, qtd: float):
+        corte = self.pega_cod(cod)
+        if corte.qtd >= qtd:
+            corte.qtd -= qtd
+            print(corte.qtd)
+        else:
+            self.__tela_estoque.mostra_mensagem('Qtd maior que o solicitado.')
 
     def retornar(self):
         self.__controlador_sistema.abre_tela()
@@ -82,7 +89,3 @@ class ControladorEstoque:
         continua = True
         while continua:
             lista_opcoes[self.__tela_estoque.tela_opcoes()]()
-
-
-
-

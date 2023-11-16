@@ -16,8 +16,8 @@ class TelaEstoque:
         print('-------- DADOS CARNE ----------')
         cod = input('Codigo: ')
         corte = input('Corte: ')
-        preco = input('Preço: ')
-        qtd = input('Qtd: ')
+        preco = float(input('Preço: '))
+        qtd = float(input('Qtd: '))
         return {"cod": cod, "corte": corte, "preco": preco, "qtd": qtd}
 
     def lista_carnes(self, dados):
