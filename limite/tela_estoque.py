@@ -16,16 +16,8 @@ class TelaEstoque:
         print('-------- DADOS CARNE ----------')
         cod = input('Codigo: ')
         corte = input('Corte: ')
-        preco = float(input('Preço: '))
         qtd = float(input('Qtd: '))
-        return {"cod": cod, "corte": corte, "preco": preco, "qtd": qtd}
-
-    def lista_carnes(self, dados):
-        print('Cod: ', dados["cod"])
-        print('Corte: ', dados["corte"])
-        print('Preço: ', dados["preco"])
-        print('Qtd: ', dados["qtd"])
-        print('\n')
+        return {"cod": cod, "corte": corte, "qtd": qtd}
 
     def seleciona(self):
         cod = input('Digite o cod do corte que deseja alterar: ')
@@ -34,7 +26,6 @@ class TelaEstoque:
     def lista_carnes(self, dados):
         print('Cod: ', dados["cod"])
         print('Corte: ', dados["corte"])
-        print('Preço: ', dados["preco"])
         print('Qtd: ', dados["qtd"])
         print('\n')
 

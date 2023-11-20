@@ -4,6 +4,7 @@ class Cliente(Pessoa):
     def __init__(self, nome: str, cpf: int):
         self.__nome = nome
         self.__cpf = cpf
+        self.__valor = 0
 
     @property
     def nome(self):
@@ -20,3 +21,11 @@ class Cliente(Pessoa):
     @cpf.setter
     def cpf(self, cpf):
         self.__cpf = cpf
+
+    @property
+    def valor(self):
+        return self.__valor
+
+    @valor.setter
+    def valor(self, valor):
+        self.__valor += valor

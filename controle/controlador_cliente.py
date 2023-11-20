@@ -35,8 +35,6 @@ class ControladorCliente:
                 cliente = Cliente(dados['nome'], dados['cpf'])
                 self.__clientes.append(cliente)
                 self.__tela_cliente.mostra_mensagem('Cliente cadastrado.')
-                print(self.__clientes[0].nome)
-
             else:
                 raise ClienteJaExisteException
         except ClienteJaExisteException as e:

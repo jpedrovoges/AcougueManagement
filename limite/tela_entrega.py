@@ -4,14 +4,12 @@ class TelaEntrega:
         self.__cliente = controlador_sistema.controlador_cliente
         self.__estoque = controlador_sistema.controlador_estoque
 
-
     def tela_opcoes(self):
         print('---- Entregas ----')
         print('Escolha uma opção: ')
         print('1 - Criar entrega')
         print('2 - Alterar entrega')
         print('3 - Excluir entrega')
-        print('4 - Listar clientes que mais compraram')
         print('0 - Retornar')
 
         opcao = int(input('Escolha uma opção: '))
@@ -24,19 +22,20 @@ class TelaEntrega:
         codigo = input('Informe o código da entrega: ')
         return {"cpf": cpf, "codigo": codigo}
 
+    def mostra_entregas(self, dados):
+        print('Cod: ', dados["codigo"])
+        print('Cliente: ', dados["cliente"])
+        print('Carne', dados["carne"])
+        print('\n')
+
     def adc_carne(self):
-        carnes= {}
-        preco = 0
-        while True:
-            self.__estoque.lista_carnes()
-            cod = int(input('Digite o codigo da carne: '))
-            qtd = float(input('Quantidade: '))
-            if self.__estoque.pega_cod(cod) is not None:
-                self.__estoque.alterar_qtd(cod, qtd)
-                self.__estoque.lista_carnes()
-            i = int(input('Deseja adicionar mais carnes (1-sim ou 2-não): '))
-            if i == 2:
-                return carnes
+        self.__estoque.lista_carnes()
+        cod_carne = int(input('Digite o codigo da carne: '))
+        return cod_carne
+
+    def seleciona(self):
+        cod = input('Digite o cod da entrega que deseja alterar: ')
+        return cod
 
 
     def mostra_mensagem(self, msg):

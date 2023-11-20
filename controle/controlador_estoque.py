@@ -21,7 +21,7 @@ class ControladorEstoque:
             if len(self.__estoque) != 0:
                 for carne in self.__estoque:
                     self.__tela_estoque.lista_carnes({"cod": carne.cod, "corte": carne.corte,
-                                                      "preco": carne.preco, "qtd": carne.qtd})
+                                                      "qtd": carne.qtd})
 
             else:
                 raise EstoqueVazioException
@@ -33,7 +33,7 @@ class ControladorEstoque:
         cod = self.pega_cod(dados['cod'])
         try:
             if cod is None:
-                carne = Estoque(dados['cod'], dados['corte'], dados['preco'], dados['qtd'])
+                carne = Estoque(dados['cod'], dados['corte'], dados['qtd'])
                 self.__estoque.append(carne)
                 self.__tela_estoque.mostra_mensagem("Seu corte foi inserido!")
             else:
@@ -51,10 +51,8 @@ class ControladorEstoque:
             novos_dados = self.__tela_estoque.pega_dados()
             corte.cod = novos_dados["cod"]
             corte.corte = novos_dados["corte"]
-            corte.preco = novos_dados["preco"]
             corte.qtd = novos_dados["qtd"]
             self.lista_carnes()
-
         else:
             self.__tela_estoque.mostra_mensagem('Codigo não corresponde a nenhum corte')
 
@@ -62,11 +60,9 @@ class ControladorEstoque:
         self.lista_carnes()
         cod = self.__tela_estoque.seleciona()
         corte = self.pega_cod(cod)
-
         if corte is not None:
             self.__estoque.remove(corte)
             self.__tela_estoque.mostra_mensagem('Seu corte foi removido')
-
         else:
             self.__tela_estoque.mostra_mensagem('Codigo não corresponde a nenhum corte')
 
@@ -74,7 +70,6 @@ class ControladorEstoque:
         corte = self.pega_cod(cod)
         if corte.qtd >= qtd:
             corte.qtd -= qtd
-            print(corte.qtd)
         else:
             self.__tela_estoque.mostra_mensagem('Qtd maior que o solicitado.')
 
