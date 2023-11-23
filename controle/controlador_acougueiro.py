@@ -1,5 +1,6 @@
 from limite.tela_acougueiro import TelaAcougueiro
 from entidade.acougueiro import Acougueiro
+from DAOs.acougueiro_dao import AcougueiroDAO
 from exceptions.JaExisteException import AcougueiroJaExisteException
 from exceptions.ListaVaziaException import ListaVaziaException
 
@@ -9,6 +10,7 @@ class ControladorAcougueiro:
         self.__controlador_sistema = controlador_sistema
         self.__acougueiros = []
         self.__tela_acougueiro = TelaAcougueiro()
+        self.__acougueiro_dao = AcougueiroDAO()
 
     def pega_acou_cpf(self, cpf: int):
         for acougueiro in self.__acougueiros:
@@ -34,7 +36,7 @@ class ControladorAcougueiro:
         try:
             if acoug == None:
                 acougueiro = Acougueiro(dados['nome'], dados['cpf'])
-                self.__acougueiros.append(acougueiro)
+                self.__acougueiro_dao.add(acougueiro)
                 self.__tela_acougueiro.mostra_mensagem('Açougueiro contratado!')
 
             else:
